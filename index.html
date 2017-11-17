@@ -19,12 +19,12 @@
           <div style="width:100%;height:93.8vh;z-index:-1;background:white;" ng-mousedown="startDraw($event)"
             ng-mouseup="endDraw($event)" ng-mousemove="draw($event)">
             <svg width="50%" height="100%" xmlns="http://www.w3.org/2000/svg" style="cursor:crosshair;z-index:-1;">
+              <image width="100%" height="100%" xlink:href='./images/evergreen.png' preserveAspectRatio='none'/>
               <rect ng-show="showShadow" ng-attr-x="{{ xLocation }}" ng-attr-y="{{ yLocation }}" ng-attr-width="{{ shapeWidth }}" ng-attr-height="{{ shapeHeight }}" style="fill:rgba(78,139,168,0.3);stroke-width:1;stroke:rgb(0,0,0)"
               />
               <rect ng-show="showShadow2" ng-attr-x="{{ shadowXLocation }}" ng-attr-y="{{ shadowYLocation }}" ng-attr-width="{{ shadowX }}" ng-attr-height="{{ shadowY }}"
                 style="fill:rgba(0,0,168,0.3);stroke-width:1;stroke:rgb(0,0,0)" />
 
-              <image width="100%" height="100%" xlink:href='./images/evergreen.png' preserveAspectRatio='none'/>
               <svg id="canvas"></svg>
             </svg>
           </div>
