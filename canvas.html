@@ -1,0 +1,183 @@
+<div id="toolbar">
+
+  <div style="width:100%;height:93.8vh;z-index:-1;background:white;" ng-mousedown="startDraw($event)"
+    ng-mouseup="endDraw($event)" ng-mousemove="draw($event)">
+    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="cursor:crosshair;z-index:-1;">
+      <rect ng-show="showShadow" ng-attr-x="{{ xLocation }}" ng-attr-y="{{ yLocation }}" ng-attr-width="{{ shapeWidth }}" ng-attr-height="{{ shapeHeight }}" style="fill:rgba(78,139,168,0.3);stroke-width:1;stroke:rgb(0,0,0)"
+      />
+      <rect ng-show="showShadow2" ng-attr-x="{{ shadowXLocation }}" ng-attr-y="{{ shadowYLocation }}" ng-attr-width="{{ shadowX }}" ng-attr-height="{{ shadowY }}"
+        style="fill:rgba(0,0,168,0.3);stroke-width:1;stroke:rgb(0,0,0)" />
+
+      <image width="100%" height="100%" xlink:href='https://imgh.us/grid.svg' preserveAspectRatio='none'/>
+      <svg id="canvas"></svg>
+    </svg>
+  </div>
+
+  <div id="toolbar">
+    <div ng-if="toolbarShow" ng-style="{{toolbarStyle}}" class="toolbar bottom tool-width-shapes">
+      <span class="tooltip__tip"></span>
+      <div class="tooltip__content">
+        <div ng-click="createBox()" class="button-square">
+          <div class="shine-square"></div>
+          <div class="square"></div>
+        </div>
+        <div ng-click="createRoundedBox()" class="button-square">
+          <div class="shine-square"></div>
+          <div class="rounded-square"></div>
+        </div>
+        <div ng-click="createCircle()" class="button-square">
+          <div class="shine-square"></div>
+          <div class="circle"></div>
+        </div>
+        <div ng-click="createEllipse()" class="button-square">
+          <div class="shine-square"></div>
+          <div class="oval"></div>
+        </div>
+        <div ng-click="createImageBox()" class="button-square">
+          <div class="shine-square"></div>
+          <div class="icon-flex">
+            <i class="material-icons">image</i>
+          </div>
+        </div>
+        <div ng-click="createVideoBox()" class="button-square">
+          <div class="shine-square"></div>
+          <div class="icon-flex">
+            <i class="material-icons">play_circle_outline</i>
+          </div>
+        </div>
+        <div ng-click="createScribbleBox()" class="button-square">
+          <div class="shine-square"></div>
+          <div class="icon-flex">
+            <img class="scribble-icon" src="./images/scribbles-01.png">
+          </div>
+        </div>
+        <div ng-click="createScribbleCircle()" class="button-square">
+          <div class="shine-square"></div>
+          <div class="icon-flex">
+            <img class="scribble-icon" src="./images/scribbles-02.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="ShapeToolbar">
+  <div ng-if="shapeToolbarShow" ng-style="{{ shapeToolbarStyle }}" class="toolbar bottom tool-width-color">
+    <span class="tooltip__tip"></span>
+    <div class="tooltip__content">
+        <input type="color" ng-style="{'background': elementColor}" list="colors" ng-change="changeShapeColor(elementColor)" ng-model="elementColor">
+        <datalist id=colors>
+          <option>#999999</option>
+          <!-- Gray -->
+          <option>#777777</option>
+          <!-- Gray -->
+          <option>#555555</option>
+          <!-- Gray -->
+          <option>#333333</option>
+          <!-- Gray -->
+          <option>#111111</option>
+          <!-- Gray -->
+          <option>#68C7EC</option>
+          <!-- LightBlue -->
+          <option>#34B3E4</option>
+          <!-- Blue -->
+          <option>#00A0DC</option>
+          <!-- Blue -->
+          <option>#0077B5</option>
+          <!-- Blue -->
+          <option>#046293</option>
+          <!-- Blue -->
+          <option>#B79EC7</option>
+          <!-- Purple -->
+          <option>#A487BA</option>
+          <!-- Purple -->
+          <option>#7B539D</option>
+          <!-- Purple -->
+          <option>#66418C</option>
+          <!-- Purple -->
+          <option>#593482</option>
+          <!-- Purple -->
+          <option>#F7C8DE</option>
+          <!-- Pink -->
+          <option>#F289B7</option>
+          <!-- Pink -->
+          <option>#C73774</option>
+          <!-- Pink -->
+          <option>#AC2258</option>
+          <!-- Pink -->
+          <option>#951343</option>
+          <!-- Pink -->
+          <option>#FEC9B8</option>
+          <!-- Red -->
+          <option>#F38A78</option>
+          <!-- Red -->
+          <option>#DD5143</option>
+          <!-- Red -->
+          <option>#AF1923</option>
+          <!-- Red -->
+          <option>#98041B</option>
+          <!-- Red -->
+          <option>#F9D291</option>
+          <!-- Orange -->
+          <option>#EC9F48</option>
+          <!-- Orange -->
+          <option>#E68523</option>
+          <!-- Orange -->
+          <option>#BD5C14</option>
+          <!-- Orange -->
+          <option>#933304</option>
+          <!-- Orange -->
+          <option>#F7DF8C</option>
+          <!-- Yellow -->
+          <option>#F4D161</option>
+          <!-- Yellow -->
+          <option>#EDB220</option>
+          <!-- Yellow -->
+          <option>#B98D27</option>
+          <!-- Yellow -->
+          <option>#856A1D</option>
+          <!-- Yellow -->
+          <option>#CEE4A3</option>
+          <!-- Green -->
+          <option>#B0D775</option>
+          <!-- Green -->
+          <option>#7CB82F</option>
+          <!-- Green -->
+          <option>#69A62A</option>
+          <!-- Green -->
+          <option>#3F652D</option>
+          <!-- Green -->
+          <option>#A9DDDD</option>
+          <!-- Teal -->
+          <option>#57BFC1</option>
+          <!-- Teal -->
+          <option>#00AEB3</option>
+          <!-- Teal -->
+          <option>#1A858E</option>
+          <!-- Teal -->
+          <option>#0E5C68</option>
+          <!-- Teal -->
+          <option>#000</option>
+          <!-- Black -->
+          <option>#FFF</option>
+          <!-- White -->
+        </datalist>
+      <div ng-click="deleteShape()" class="button-square" style="margin-right: 0px">
+        <div class="shine-square"></div>
+        <i class="material-icons trash">delete</i>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="ImageToolbar">
+  <div ng-if="imageToolbarShow" ng-style="{{ imageToolbarStyle }}" class="toolbar bottom tool-width-image">
+    <span class="tooltip__tip"></span>
+    <div ng-click="deleteShape()" class="button-square" style="margin-right: 0px">
+      <div class="shine-square"></div>
+      <i class="material-icons trash">delete</i>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>

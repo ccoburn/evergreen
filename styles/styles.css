@@ -1,0 +1,453 @@
+//BACKGROUND IMAGE
+html{
+    background: url('../images/mainBG.jpg') no-repeat center center fixed;
+    overflow-x: hidden;
+}
+hr{
+    margin: 0;
+}
+.content{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: rgba(255,255,255,0.6);
+    padding: 50px;
+    left: 300px;
+    z-index: -2;
+}
+.content-cards{
+    position: absolute;
+    height: 100vh;
+    width: 83%;
+    padding: 50px;
+    left: 300px;
+    z-index: -2;
+}
+
+
+.content2{
+    @include vert-align-center;
+    position: relative;
+    height: 700px;
+    width: 100vw;
+    background: rgba(0,0,0,1);
+
+
+    .hero-left{
+        @include vert-align-center;
+        justify-content: flex-end;
+        width: 50%;
+        height: 100%;
+        .hero-text-wrap{
+            width: 550px;
+            margin-right: 60px;
+
+            .font-white{
+                margin-bottom: 20px;
+            }
+            .button{
+                margin: 35px 0 0 0;
+            }
+        }
+    }
+    .hero-right{
+        @include vert-align-center;
+        justify-content: flex-start;
+        width: 50%;
+        height: 100%;
+
+        img{
+            margin-right: 60px;
+
+        }
+    }
+}
+
+
+.content3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 700px;
+    width: 100vw;
+    background: #1A1B1F;
+    padding-top: 100px;
+    padding-bottom: 50px;
+
+    iframe{
+        margin-top: 60px;
+        border-radius: 6px;
+        box-shadow: $card-shadow;
+    }
+    img{
+        height: 1000px;
+        width: 670px;
+        margin-top: 60px;
+        border-radius: 6px;
+        box-shadow: $card-shadow;
+    }
+}
+
+
+
+
+#container {
+  box-shadow: inset 0 1px 0 #444, 0 -1px 0 #000;
+  height: 140px;
+  left: 2%;
+  margin: -70px 0 0 -60px;
+  position: absolute;
+  top: 71px;
+  width: 100%;
+}
+
+
+canvas {
+    display: block;
+    margin: 0 auto;
+}
+
+
+// .relative-container{
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+
+//     .absolute-container{
+//         position: absolute;
+//         left: 0;
+//         right: 0;
+//         margin-left: auto;
+//         margin-right: auto;
+//     }
+// }
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tool-width-shapes {
+  width: 300px;
+  height: auto;
+}
+
+.tool-width-color {
+  width: 85px;
+  height: auto;
+}
+
+.tool-width-image {
+  width: 50px;
+  height: auto;
+}
+
+.tooltip {
+  top: 64px;
+  right: 257px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #FFF;
+  display: inline-block;
+  /* Just for test */
+  margin: 0 6px;
+  /* Just for test */
+  padding: 15px 25px;
+  position: absolute;
+  box-shadow: $fancy-shadow;
+  text-align: center;
+
+}
+
+.toolbar {
+top: 64px;
+right: 600px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #1D1F20;
+  color: white;
+  display: inline-block;
+  /* Just for test */
+  margin: 0 6px;
+  /* Just for test */
+  padding: 5px 8px;
+  position: absolute;
+  box-shadow: $fancy-shadow;
+  text-align: center;
+
+}
+
+//Tip of Tool-tip
+.tooltip__tip {
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background-color: inherit;
+  display: block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+}
+.top .tooltip__tip, .bottom .tooltip__tip {
+  left: 50%;
+  margin-left: -6px;
+}
+.top .tooltip__tip {
+  top: -6px;
+}
+.bottom .tooltip__tip {
+  bottom: -6px;
+}
+.left .tooltip__tip, .right .tooltip__tip {
+  top: 50%;
+  margin-top: -6px;
+}
+.right .tooltip__tip {
+  right: -6px;
+}
+.left .tooltip__tip {
+  left: -6px;
+}
+
+
+
+
+.tooltip__content{
+  display: flex;
+  justify-content: space-around;
+}
+
+.circle{
+  width: 20px;
+  height: 20px;
+  border: 1px solid #FFF;
+  border-radius: 50px;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+.oval{
+  width: 14px;
+  height: 20px;
+  border: 1px solid #FFF;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+.square{
+  width: 20px;
+  height: 20px;
+  border: 1px solid #FFF;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+.rounded-square{
+  width: 20px;
+  height: 20px;
+  border: 1px solid #FFF;
+  border-radius: 3px;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+
+.trash{
+  margin: 3px auto!important;
+  // margin-top: 5px;
+}
+
+.icon-flex{
+  @include vert-align-center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.scribble-icon{
+  height: 20px;
+  margin: 2px;
+}
+
+.button2{
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    border-radius: $border-radius-base;
+    padding: 12px 30px;
+    margin: 10px;
+    font-size: $mdb-btn-font-size-base;
+    position: relative;
+    background-color: $btn-default-bg;
+}
+
+.button2:hover{
+    background-color: $orange-400;
+    color: $btn-default-bg;
+    cursor: pointer;
+}
+
+
+.button {
+    min-height: 1.5em;
+    display: inline-block;
+    padding: 10px 32px;
+    margin: 2px 10px 2px 5px;
+    cursor: pointer;
+    opacity: 0.9;
+
+    color: #FFF;
+    font-size: 1em;
+    letter-spacing: 1px;
+    text-shadow: rgba(0,0,0,0.9) 0px 1px 2px;
+
+    background: #434343;
+    border: 1px solid #242424;
+    border-radius: 4px;
+    box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+    transition: all 0.1s linear;
+}
+
+.button:hover {
+    box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+}
+
+.button:active {
+    box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+}
+
+.button-square {
+    height: 2em;
+    width: 2em;
+    display: inline-block;
+    padding: 0px 0px;
+    margin: 2px 3px 2px 3px;
+    cursor: pointer;
+    opacity: 0.9;
+    color: #FFF;
+    font-size: 1em;
+    letter-spacing: 1px;
+    text-shadow: rgba(0,0,0,0.9) 0px 1px 2px;
+
+    background: #242424;
+    border: 1px solid #242424;
+    border-radius: 4px;
+    box-shadow: rgba(255,255,255,0.06) 0px 1px 0px, inset rgba(255,255,255,0.06) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+    transition: all 0.1s linear;
+}
+
+.button-square:hover {
+    box-shadow: rgba(0,0,0,0.5) 0px 2px 5px, inset rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(0,0,0,0.25) 0px 0px 0px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+}
+
+.button-square:active {
+    box-shadow: rgba(255,255,255,0.25) 0px 1px 0px, inset rgba(255,255,255,0) 0px 1px 0px, inset rgba(0,0,0,0.5) 0px 0px 5px, inset rgba(255,255,255,0.03) 0px 20px 0px, inset rgba(0,0,0,0.15) 0px -20px 20px, inset rgba(255,255,255,0.05) 0px 20px 20px;
+}
+
+
+.shine-square {
+    display: block;
+    position: relative;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 );
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 50%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.1) 50%,rgba(255,255,255,0) 100%);
+    padding: 0px 5px;
+    top: 0px;
+    left: -4px;
+    height: 1px;
+    box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.shine {
+    display: block;
+    position: relative;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 );
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+    padding: 0px 12px;
+    top: -10px;
+    left: -24px;
+    height: 1px;
+    box-shadow: rgba(255,255,255,0.2) 0px 1px 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover .shine {left: 24px;}
+.button:active .shine {opacity: 0;}
+
+.button-square:hover .shine-square {left: 4px; background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 100%);
+    background: linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 100%);}
+.button-square:active .shine-square {opacity: 0;}
+
+
+.icon-small{
+    font-size: 24px !important;
+    user-select: none;
+}
+
+.icon-large{
+    font-size: 36px !important;
+    user-select: none;
+}
+.icon-extra-large{
+    font-size: 80px !important;
+    user-select: none;
+}
+
+// .material-icons {
+//   font-family: 'Material Icons';
+//   font-weight: normal;
+//   font-style: normal;
+//   font-size: 24px;
+// }
+
+.star{
+    cursor: pointer;
+    color: $yellow-A700;
+    font-size: 30px !important;
+    user-select: none;
+}
+
+.back-arrow{
+    cursor: pointer;
+    color: $brand-black;
+    font-size: 30px !important;
+    user-select: none;
+
+}
+.back-arrow:hover{
+    color: #FFF;
+
+}
+
+input{
+    border-radius: 50px;
+    height: 26px;
+    border: none;
+    padding: 15px 12px;
+    outline: none;
+}
+
+
+input[type="color"] {
+	-webkit-appearance: none;
+    border-radius: 50px;
+    // background: transparent;
+	border: none;
+    margin-top: 3px;
+    margin-right: 6px;
+	width: 25px;
+	height: 25px !important;
+    padding: 15px 15px;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+}
