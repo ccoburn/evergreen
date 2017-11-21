@@ -214,7 +214,7 @@ angular.module('app').controller('mainCtrl', function($scope,  $document, $compi
   }
 
   $scope.createImageBox = function () {
-    let template = ("<svg width='100%' height='100%'><image preserveAspectRatio='none' xlink:href='./images/image-box.svg'  ng-mousedown='disableDrawFunc($event)' ng-mousemove='dragRect($event)' ng-click='showImageToolbar($event)' x=" + $scope.shadowXLocation + " y=" + $scope.shadowYLocation + " width=" + $scope.shadowX + " height=" + $scope.shadowY + " stroke='red' stroke-width='1' fill='white' style='opacity:0.95;cursor:move' is-selected='false' id='dynamicId" + $scope.tempXLocation + $scope.tempYLocation + "'  />   </svg>");
+    let template = ("<svg width='100%' height='100%'><image preserveAspectRatio='none' xlink:href='./images/ornament_star.png'  ng-mousedown='disableDrawFunc($event)' ng-mousemove='dragRect($event)' ng-click='showImageToolbar($event)' x=" + $scope.shadowXLocation + " y=" + $scope.shadowYLocation + " width=" + $scope.shadowX + " height=" + $scope.shadowY + " stroke='red' stroke-width='1' fill='white' style='opacity:0.95;cursor:move' is-selected='false' id='dynamicId" + $scope.tempXLocation + $scope.tempYLocation + "'  />   </svg>");
     let linkFn = $compile(template);
     let content = linkFn($scope);
     $rootScope.canvas.append(content);
@@ -225,7 +225,7 @@ angular.module('app').controller('mainCtrl', function($scope,  $document, $compi
   }
 
   $scope.createVideoBox = function () {
-    let template = ("<svg width='100%' height='100%'><image preserveAspectRatio='none' xlink:href='./images/video-box.svg'  ng-mousedown='disableDrawFunc($event)' ng-mousemove='dragRect($event)' ng-click='showImageToolbar($event)' x=" + $scope.shadowXLocation + " y=" + $scope.shadowYLocation + " width=" + $scope.shadowX + " height=" + $scope.shadowY + " stroke='red' stroke-width='1' fill='white' style='opacity:0.95;cursor:move' is-selected='false' id='dynamicId" + $scope.tempXLocation + $scope.tempYLocation + "'  />   </svg>");
+    let template = ("<svg width='100%' height='100%'><image preserveAspectRatio='none' xlink:href='./images/ornament_green.png'  ng-mousedown='disableDrawFunc($event)' ng-mousemove='dragRect($event)' ng-click='showImageToolbar($event)' x=" + $scope.shadowXLocation + " y=" + $scope.shadowYLocation + " width=" + $scope.shadowX + " height=" + $scope.shadowY + " stroke='red' stroke-width='1' fill='white' style='opacity:0.95;cursor:move' is-selected='false' id='dynamicId" + $scope.tempXLocation + $scope.tempYLocation + "'  />   </svg>");
     let linkFn = $compile(template);
     let content = linkFn($scope);
     $rootScope.canvas.append(content);
@@ -236,7 +236,7 @@ angular.module('app').controller('mainCtrl', function($scope,  $document, $compi
   }
 
   $scope.createScribbleBox = function () {
-    let template = ("<svg width='100%' height='100%'><image preserveAspectRatio='none' xlink:href='./images/scribblesframe.png'  ng-mousedown='disableDrawFunc($event)' ng-mousemove='dragRect($event)' ng-click='showImageToolbar($event)' x=" + $scope.shadowXLocation + " y=" + $scope.shadowYLocation + " width=" + $scope.shadowX + " height=" + $scope.shadowY + " stroke='red' stroke-width='1' fill='white' style='opacity:0.95;cursor:move' is-selected='false' id='dynamicId" + $scope.tempXLocation + $scope.tempYLocation + "'  />   </svg>");
+    let template = ("<svg width='100%' height='100%'><image preserveAspectRatio='none' xlink:href='./images/ornament_blue.png'  ng-mousedown='disableDrawFunc($event)' ng-mousemove='dragRect($event)' ng-click='showImageToolbar($event)' x=" + $scope.shadowXLocation + " y=" + $scope.shadowYLocation + " width=" + $scope.shadowX + " height=" + $scope.shadowY + " stroke='red' stroke-width='1' fill='white' style='opacity:0.95;cursor:move' is-selected='false' id='dynamicId" + $scope.tempXLocation + $scope.tempYLocation + "'  />   </svg>");
     let linkFn = $compile(template);
     let content = linkFn($scope);
     $rootScope.canvas.append(content);
@@ -247,7 +247,7 @@ angular.module('app').controller('mainCtrl', function($scope,  $document, $compi
   }
 
   $scope.createScribbleCircle = function () {
-    let template = ("<svg width='100%' height='100%'><image preserveAspectRatio='none' xlink:href='./images/scribble-circle.png'  ng-mousedown='disableDrawFunc($event)' ng-mousemove='dragRect($event)' ng-click='showImageToolbar($event)' x=" + $scope.shadowXLocation + " y=" + $scope.shadowYLocation + " width=" + $scope.shadowX + " height=" + $scope.shadowY + " stroke='red' stroke-width='1' fill='white' style='opacity:0.95;cursor:move' is-selected='false' id='dynamicId" + $scope.tempXLocation + $scope.tempYLocation + "'  />   </svg>");
+    let template = ("<svg width='100%' height='100%'><image preserveAspectRatio='none' xlink:href='./images/ornament_red.png'  ng-mousedown='disableDrawFunc($event)' ng-mousemove='dragRect($event)' ng-click='showImageToolbar($event)' x=" + $scope.shadowXLocation + " y=" + $scope.shadowYLocation + " width=" + $scope.shadowX + " height=" + $scope.shadowY + " stroke='red' stroke-width='1' fill='white' style='opacity:0.95;cursor:move' is-selected='false' id='dynamicId" + $scope.tempXLocation + $scope.tempYLocation + "'  />   </svg>");
     let linkFn = $compile(template);
     let content = linkFn($scope);
     $rootScope.canvas.append(content);
