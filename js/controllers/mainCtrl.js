@@ -257,6 +257,28 @@ angular.module('app').controller('mainCtrl', function($scope,  $document, $compi
     $scope.showimageToolbar("whatever", $scope.shadowXLocation, $scope.shadowYLocation);
   }
 
+	$scope.createPresent1 = function () {
+    let template = ("<svg width='100%' height='100%'><image preserveAspectRatio='none' xlink:href='./images/present1.png'  ng-mousedown='disableDrawFunc($event)' ng-mousemove='dragRect($event)' ng-click='showImageToolbar($event)' x=" + $scope.shadowXLocation + " y=" + $scope.shadowYLocation + " width=" + $scope.shadowX + " height=" + $scope.shadowY + " stroke='red' stroke-width='1' fill='white' style='opacity:0.95;cursor:move' is-selected='false' id='dynamicId" + $scope.tempXLocation + $scope.tempYLocation + "'  />   </svg>");
+    let linkFn = $compile(template);
+    let content = linkFn($scope);
+    $rootScope.canvas.append(content);
+    $scope.showShadow2 = false;
+    $scope.toolbarShow = false;
+    $scope.shapeClass = angular.element(document.querySelector('#dynamicId' + $scope.tempXLocation + $scope.tempYLocation))
+    $scope.showimageToolbar("whatever", $scope.shadowXLocation, $scope.shadowYLocation);
+  }
+
+	$scope.createPresent2 = function () {
+    let template = ("<svg width='100%' height='100%'><image preserveAspectRatio='none' xlink:href='./images/present2.png'  ng-mousedown='disableDrawFunc($event)' ng-mousemove='dragRect($event)' ng-click='showImageToolbar($event)' x=" + $scope.shadowXLocation + " y=" + $scope.shadowYLocation + " width=" + $scope.shadowX + " height=" + $scope.shadowY + " stroke='red' stroke-width='1' fill='white' style='opacity:0.95;cursor:move' is-selected='false' id='dynamicId" + $scope.tempXLocation + $scope.tempYLocation + "'  />   </svg>");
+    let linkFn = $compile(template);
+    let content = linkFn($scope);
+    $rootScope.canvas.append(content);
+    $scope.showShadow2 = false;
+    $scope.toolbarShow = false;
+    $scope.shapeClass = angular.element(document.querySelector('#dynamicId' + $scope.tempXLocation + $scope.tempYLocation))
+    $scope.showimageToolbar("whatever", $scope.shadowXLocation, $scope.shadowYLocation);
+  }
+
   $scope.allowDrawFunc = function () {
     $scope.allowDraw = true;
   }
