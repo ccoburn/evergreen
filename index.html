@@ -16,7 +16,7 @@
         <!-- <nav-bar></nav-bar> -->
         <div id="toolbar">
 
-          <div style="width:100%;height:93.8vh;z-index:-1;background:white;" ng-mousedown="startDraw($event)"
+          <div style="width:100%;height:100vh;z-index:-1;background:white;" ng-mousedown="startDraw($event)"
             ng-mouseup="endDraw($event)" ng-mousemove="draw($event)">
             <svg width="50%" height="100%" xmlns="http://www.w3.org/2000/svg" style="cursor:crosshair;z-index:-1;">
               <image width="100%" height="100%" xlink:href='./images/evergreen.png' preserveAspectRatio='none'/>
@@ -31,7 +31,7 @@
 
           <div id="toolbar">
             <div ng-if="toolbarShow" ng-style="{{ toolbarStyle }}" class="toolbar bottom tool-width-shapes">
-              <span class="tooltip__tip"></span>
+              <!-- <span class="tooltip__tip"></span> -->
               <div class="tooltip__content">
                 <div ng-click="createBox()" class="button-square">
                   <div class="shine-square"></div>

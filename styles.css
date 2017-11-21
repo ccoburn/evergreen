@@ -1,8 +1,8 @@
-/* 
+/*
 html5doctor.com Reset Stylesheet
 v1.6.1
 Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com 
+Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
@@ -353,7 +353,7 @@ li {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  background-color: #1D1F20;
+  background-color: #3e0000;
   color: white;
   display: inline-block;
   /* Just for test */
